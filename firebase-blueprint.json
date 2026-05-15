@@ -1,0 +1,32 @@
+{
+  "entities": {
+    "WrongAnswer": {
+      "title": "Wrong Answer",
+      "description": "Stores a wrong answer record for a user.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "question": {
+          "type": "object"
+        },
+        "failedAt": {
+          "type": "number"
+        },
+        "correctCount": {
+          "type": "number"
+        }
+      },
+      "required": ["userId", "question", "failedAt", "correctCount"]
+    }
+  },
+  "firestore": {
+    "/test/{testId}": {
+      "schema": {
+        "$ref": "#/entities/WrongAnswer"
+      },
+      "description": "Stores wrong answers."
+    }
+  }
+}
